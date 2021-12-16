@@ -1,0 +1,11 @@
+# Copy file to /etc/systemd/system
+[Unit]
+Description=Update Nextion Display
+After=multi-user.target
+
+[Service]
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/ham_nextion/ham_nextion.py
+
+[Install]
+WantedBy=multi-user.target

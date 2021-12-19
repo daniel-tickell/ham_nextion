@@ -13,6 +13,11 @@ Required Packages
 *   *pip3 install nextion*
 *   *pip3 install maidenhead*
 
+Setup GPSD
+*   Connect GPS device and work out which port it is (for me /dev/ttyACM0)
+  *   cat /dev/ACM0 and look at the output
+*   Edit /etc/default/gpsd to reflect the correct serial port
+*   gpsmon should show vaild data   
 
 Setup Nextion
 * Wire to the serial Pins on the pi and power as per [this](https://www.f5uii.net/en/tutorial-nextion-screen-on-mmdvm-raspberry-pi/)
@@ -27,3 +32,4 @@ Set to auto Start
 
 to check if the service is working
 * *sudo service ham_nextion status* 
+

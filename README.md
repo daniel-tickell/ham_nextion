@@ -8,7 +8,22 @@ Functions of this code are:
 
 
 Required Packages
-*  https://github.com/MartijnBraam/gpsd-py3
-*   pip3 install gpsd-py3
-*   pip3 install nextion
-*   pip3 install maidenhead
+*   *sudo apt install python3*
+*   *pip3 install [gpsd-py3](https://github.com/MartijnBraam/gpsd-py3)*
+*   *pip3 install nextion*
+*   *pip3 install maidenhead*
+
+
+Setup Nextion
+* Wire to the serial Pins on the pi and power as per [this](https://www.f5uii.net/en/tutorial-nextion-screen-on-mmdvm-raspberry-pi/)
+* run raspi-config -> interface options -> serial port
+* Select No (login Shell) and then Yes (Serial port hardware)
+
+Set to auto Start
+* Copy ham_nextion.service to /etc/systemd/system/
+* *sudo systemctl daemon-reload*
+* *sudo systemctl enable ham_nextion.service*
+* *sudo service ham_nextion start*
+
+to check if the service is working
+* *sudo service ham_nextion status* 
